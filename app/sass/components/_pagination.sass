@@ -1,0 +1,35 @@
+.pagination
+    &__list
+        display: flex
+        margin: 0
+        padding: 0
+    &__item
+        margin: 0 5px 0 0
+        border-radius: 3px
+        line-height: 100%
+        background: $bg-gray
+        transition: background .25s
+        a
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 40px
+            height: 40px
+            color: $gray-medium
+        &--active
+            background: $blue
+            a
+                color: #fff
+        &:last-child
+            margin: 0
+        &:not(&--active):hover
+            background: darken($bg-gray, 3%)
+            a
+                color: $blue
+        &--prev, &--next
+            &:hover
+                .pagination__arrow
+                    stroke: $blue
+    &__arrow
+        stroke: #9BA3A8
+        transition: stroke .25s

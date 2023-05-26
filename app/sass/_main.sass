@@ -1,0 +1,73 @@
+::placeholder
+	color: $placeholder
+
+::selection
+	background-color: $accent
+	color: #fff
+
+body
+	position: relative
+	overflow-x: hidden
+	min-width: 320px
+	margin: 0 auto
+	line-height: 160%
+	font-family: $default_font, sans-serif
+	color: $black
+	&.hidden
+		overflow: hidden
+	@include media('>sm')
+		&.hidden
+			overflow: auto
+
+img
+	max-width: 100%
+
+ul
+	list-style: none
+
+a
+	transition: color .25s
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+// Hidden arrows type number
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+	-webkit-appearance: none
+	margin: 0
+
+input
+	width: 100%
+	margin: 0
+	outline: none
+	&.error
+		border-color: red
+
+strong
+	font-family: $bold
+
+.center
+	text-align: center
+
+@include media('<xl')
+	.xl--d-none
+		display: none !important
+
+@include media('<md')
+	.md--d-none
+		display: none !important
+
+@include media('<sm')
+	.sm--d-none
+		display: none !important
+
+@include media('<xs')
+	.xs--d-none
+		display: none !important
+	.xs--d-block
+		display: block !important

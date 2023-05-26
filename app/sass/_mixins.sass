@@ -1,0 +1,46 @@
+@mixin link_hover
+	position: relative
+	display: inline-block
+	line-height: 100%
+	&:after
+		content: ''
+		position: absolute
+		left: 50%
+		right: 50%
+		bottom: -4px
+		height: 2px
+		border-radius: 2px
+		background: $black
+		transition: .25s
+		will-change: left, right
+	&:hover
+		text-decoration: none
+		&:after
+			left: 4px
+			right: 4px
+			background: $accent
+
+@mixin for_filter_blur
+	-webkit-backface-visibility: hidden
+	-webkit-perspective: 1000
+	-webkit-transform: translate3d(0,0,0)
+	-webkit-transform: translateZ(0)
+	backface-visibility: hidden
+	perspective: 1000
+	transform: translate3d(0,0,0)
+	transform: translateZ(0)
+
+@mixin scroll
+	&::-webkit-scrollbar-thumb
+		border-radius: 6px
+		background: $accent
+	&::-webkit-scrollbar
+		width: 4px
+		height: 4px
+		border-radius: 6px
+		background-color: #bababa
+
+@mixin noscroll
+	&::-webkit-scrollbar
+		width: 0
+		height: 0

@@ -1,0 +1,145 @@
+.itc-select
+    position: relative
+    width: 100%
+
+.itc-select__toggle
+    display: flex
+    justify-content: space-between
+    align-items: center
+    width: 100%
+    height: 36px
+    padding: 0 10px
+    font: 14px $default_font
+    line-height: 100%
+    color: $gray-dark
+    background-color: #fff
+    border: 1px solid $sep
+    border-radius: 3px
+    cursor: pointer
+    user-select: none
+    &::after
+        flex-shrink: 0
+        width: 12px
+        height: 7px
+        margin-left: 14px
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 0.5L6 5.5L11 0.5' stroke='%230D0F16'/%3E%3C/svg%3E%0A")
+        opacity: .5
+        background-size: cover
+        content: ''
+    &::before
+        flex-shrink: 0
+        width: 12px
+        height: 12px
+        margin-right: 14px
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.666504 5H8.6665V7H0.666504V5ZM0.666504 0H11.3332V2H0.666504V0ZM0.666504 12H5.48984V10H0.666504V12Z' fill='%230D0F16'/%3E%3C/svg%3E%0A")
+        opacity: .45
+        background-size: cover
+        content: ''
+    &:focus
+        outline: none
+    @include media('<sm')
+        height: 40px
+        color: $black
+        background: $bg-gray
+        border: 0
+        &::after, &::before
+            opacity: 1
+
+.itc-select_show .itc-select__toggle::after
+    transform: rotate(180deg)
+
+.itc-select__dropdown
+    position: absolute
+    top: 36px
+    right: 0
+    left: 0
+    z-index: 900
+    display: none
+    max-height: 1000px
+    overflow-y: auto
+    background-color: #fff
+    border: 1px solid $sep
+    border-radius: 0 0 3px 3px
+    @include media('<sm')
+        top: 40px
+
+.itc-select_show
+    .itc-select__dropdown, .itc-select__backdrop
+        display: block
+
+.itc-select__options
+    margin: 0
+    padding: 0
+    list-style: none
+
+.itc-select__option
+    padding: 8px 10px
+    font-size: 14px
+    &:hover
+        background-color: $bg-gray
+        cursor: pointer
+        transition: 0.25s background-color ease-in-out
+
+.itc-select__option_selected
+    display: flex
+    justify-content: space-between
+    align-items: center
+    color: #fff
+    background-color: $blue
+    &:hover
+        color: #fff
+        background-color: $blue
+
+.itc-select
+    &--from
+        .itc-select__toggle
+            height: 52px
+            border: 0
+            padding: 0 22px
+            justify-content: space-between
+            color: #0D0F16
+            &::before
+                display: none
+            &::after
+                opacity: 1
+                transform: scale(1.1)
+        &.itc-select_show .itc-select__toggle::after
+            transform: scale(1.1) rotate(180deg)
+        .itc-select__dropdown
+            top: 52px
+        .itc-select__option
+            padding: 10px 22px
+            &:not(.itc-select__option_selected):hover
+                background: white
+    @include media('<sm')
+        .itc-select__toggle
+            background: white
+
+.jobs-city
+    .itc-select__toggle
+        height: 45px
+        padding: 0 26px
+        font: 15px $bold
+        white-space: nowrap
+        color: #000
+        &::before
+            width: 15px
+            height: 19px
+            background-image: url("data:image/svg+xml,%3Csvg width='15' height='19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M14.958 7.692c0 3.974-6.23 9.408-6.94 10.014l-.521.445-.518-.448C6.266 17.1.036 11.666.036 7.692c0-4.161 3.34-7.535 7.46-7.535 4.121 0 7.461 3.374 7.461 7.535Zm-4.07-.466c0 1.775-1.518 3.214-3.391 3.214S4.105 9 4.105 7.226c0-1.774 1.519-3.213 3.392-3.213s3.391 1.439 3.391 3.213Z' fill='%231446A0'/%3E%3C/svg%3E")
+            opacity: 1
+        &::after
+            opacity: 1
+            transform: scale(1.1)
+    .itc-select_show .itc-select__toggle::after
+        transform: scale(1.1) rotate(180deg)
+    .itc-select__dropdown
+        top: 42px
+    @include media('<sm')
+        .itc-select__toggle
+            padding: 0 50px 0 0
+            &::after
+                margin-top: 2px
+
+.catalog-sort__list.itc-select .itc-select__toggle
+    @include media('<sm')
+        background-color: $bg-gray
