@@ -4584,3 +4584,39 @@
 
 //Container
 @import container
+
+
+
+.simple-banner 
+	background: #1649A4
+	background-size: cover
+	background-position: center center
+	background-repeat: no-repeat
+	padding: 69px 0 48px
+
+.simple-banner-text 
+	color:  #FFF
+	text-align: center
+	font-family: $bold, sans-serif
+	font-size: 32px
+	font-style: normal
+	font-weight: 600
+	line-height: 150%
+	text-transform: uppercase
+	letter-spacing: 0.2px
+
+	
+	@include media('<xs')
+		font-size: 20px
+
+.simple-banner-btns 
+	margin-top: 26px
+	display: flex
+	justify-content: center
+	flex-wrap: wrap
+	margin-left: -30px
+	margin-bottom: -30px
+
+.simple-banner-btn 
+	margin-left: 30px
+	margin-bottom: 30px
