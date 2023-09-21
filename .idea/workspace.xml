@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="655657e3-6dad-465e-af38-0478c68be671" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/css/styles.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/css/styles.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/sass/styles.sass" beforeDir="false" afterPath="$PROJECT_DIR$/app/sass/styles.sass" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -112,7 +109,7 @@
       <option name="presentableId" value="Default" />
       <updated>1685106700698</updated>
       <workItem from="1685106702271" duration="604000" />
-      <workItem from="1695308554858" duration="2687000" />
+      <workItem from="1695308554858" duration="2882000" />
     </task>
     <servers />
   </component>
