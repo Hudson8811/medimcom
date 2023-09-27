@@ -4620,3 +4620,75 @@
 .simple-banner-btn 
 	margin-left: 30px
 	margin-bottom: 30px
+
+
+
+
+.section-preeminence
+	padding: 80px 0 88px
+	background: #1649A4
+	background-size: cover
+	background-position: center center
+	background-repeat: no-repeat
+
+	@media (max-width: 577.5px)
+		padding: 45px 0
+
+	.section-title
+		h2
+			color: #fff
+			
+
+
+.preeminence
+	display: flex
+	flex-wrap: wrap
+	margin-left: -30px
+	margin-bottom: -30px
+	margin-top: 50px
+	
+
+.preeminence-item
+	margin-left: 30px
+	margin-bottom: 30px
+	width: calc(33.33% - 30px)
+	padding: 32px 39px 32px 28px
+	background: #fff
+
+	@media (max-width: 1199px)
+		width: calc(50% - 30px)
+		
+	@media (max-width: 767px)
+		width: calc(100% - 30px)
+		
+.preeminence-item__inner
+	display: flex
+	align-items: center
+	
+	&::before
+		content: ''
+		display: block
+		height: 100px
+		width: 1px
+		background: #eaeff1
+		margin-left: 28px
+		margin-right: 20px
+		order: 2
+
+.preeminence-item__image
+	width: 49px
+	min-width: 49px
+	height: auto
+	order: 1
+	img
+		width: 100%
+		height: auto
+		display: block
+
+.preeminence-item__text
+	order: 3
+	color: var(--main-black, #0D0F16)
+	font-size: 16px
+	font-style: normal
+	font-weight: 600
+	line-height: 160%
