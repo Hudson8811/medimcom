@@ -1,3 +1,84 @@
+$(function () {
+	// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+	let vh = window.innerHeight * 0.01;
+	// Then we set the value in the --vh custom property to the root of the document
+	document.documentElement.style.setProperty('--vh', `${vh}px`);
+	// We listen to the resize event
+	window.addEventListener('resize', () => {
+		// We execute the same script as before
+		let vh = window.innerHeight * 0.01;
+		document.documentElement.style.setProperty('--vh', `${vh}px`);
+	});
+
+	
+	var closeCatalogMenuOnLeaveTimeout=false;
+	$('.js-desktop-catalog-opener, .js-catalog-menu-wrap').on('mouseenter', function () {
+		if(closeCatalogMenuOnLeaveTimeout!==false){
+			clearTimeout(closeCatalogMenuOnLeaveTimeout);
+		}
+		$('.js-catalog-menu-wrap').addClass('catalog-menu-wrap--opened');
+	});
+
+	$('.js-desktop-catalog-opener, .js-catalog-menu-wrap').on('mouseleave', function () {
+		
+		if(!window.matchMedia('(max-width: 991.5px)').matches){
+			closeCatalogMenuOnLeaveTimeout=setTimeout(function(){
+				$('.js-catalog-menu-wrap').removeClass('catalog-menu-wrap--opened');
+				closeCatalogMenuOnLeaveTimeout=false;
+			},300);
+		}
+	});
+
+	$('.js-catalog-menu__item-l1-sub-opener').on('click', function(e){
+		e.stopPropagation();	
+		$(this).siblings('.catalog-menu__item-l1-subs').stop(true).slideToggle(300);
+		$(this).closest('.catalog-menu__item-l1').toggleClass('catalog-menu__item-l1--sub-opened');
+	});
+
+	$('.catalog-menu__item-l1--has-sub').on('click', function(){
+		if(window.matchMedia('(max-width: 991.5px)').matches){
+		$(this).find('.js-catalog-menu__item-l1-sub-opener').trigger('click');	
+		}	
+	});
+	$('.catalog-menu__item-l1-link').on('click', function(e){
+		e.stopPropagation();	
+	});
+
+
+
+
+	$('.js-mob-menu-catalog-btn__link').on('click', function(e){
+		e.stopPropagation();
+	});
+
+	$('.js-mob-menu-catalog-btn').on('click', function(e){
+		//$('.header__content-wrapper .menu-toggle').trigger('click');
+		$('.js-catalog-menu-wrap').addClass('catalog-menu-wrap--opened');
+		document.querySelector('body').classList.remove('hidden');
+		document.querySelector('body').classList.add('hidden-body-mob');
+		$('.header__content-wrapper .menu-toggle').removeClass('menu-toggle--opened');
+		document.querySelector('.header__mobile-menu').classList.remove('header__mobile-menu--opened');
+		document.querySelector('.header').classList.remove('header--bg_blur');
+	});
+
+	
+
+	$('.js-close-catalog-mob ').on('click', function(e){
+		//$('.header__content-wrapper .menu-toggle').trigger('click');
+		$('.js-catalog-menu-wrap').removeClass('catalog-menu-wrap--opened');
+		//document.querySelector('body').classList.remove('hidden');
+		
+		document.querySelector('body').classList.remove('hidden-body-mob');
+	});
+
+	
+	
+});
+
+
+
+
+
 window.addEventListener('DOMContentLoaded', () => {
 	// Mobile menu btn toggle
 	const btnMenu = document.querySelector('.menu-toggle');
@@ -16,46 +97,52 @@ window.addEventListener('DOMContentLoaded', () => {
 	}
 
 	// mask input phone
-    function maskPhone(selector, masked = "+7 (___) ___-__-__") {
-        const elems = document.querySelectorAll(selector);
+	function maskPhone(selector, masked = "+7 (___) ___-__-__") {
+		const elems = document.querySelectorAll(selector);
 
-        function mask(event) {
-          const keyCode = event.keyCode;
-          const template = masked,
-            def = template.replace(/\D/g, ""),
-            val = this.value.replace(/\D/g, "");
-          let i = 0,
-            newValue = template.replace(/[_\d]/g, function (a) {
-              return i < val.length ? val.charAt(i++) || def.charAt(i) : a;
-            });
-          i = newValue.indexOf("_");
-          if (i != -1) {
-            newValue = newValue.slice(0, i);
-          }
-          let reg = template
-            .substr(0, this.value.length)
-            .replace(/_+/g, function (a) {
-              return "\\d{1," + a.length + "}";
-            })
-            .replace(/[+()]/g, "\\$&");
-          reg = new RegExp("^" + reg + "$");
-          if (!reg.test(this.value) || this.value.length < 5 || (keyCode > 47 && keyCode < 58)) {
-            this.value = newValue;
-          }
-          if (event.type == "blur" && this.value.length < 5) {
-            this.value = "";
-          }
-        }
-      
-        for (const elem of elems) {
-          elem.addEventListener("input", mask);
-          elem.addEventListener("focus", mask);
-          elem.addEventListener("blur", mask);
-        }
-    }
-    maskPhone('input[type="tel"]');
+		function mask(event) {
+			const keyCode = event.keyCode;
+			const template = masked,
+				def = template.replace(/\D/g, ""),
+				val = this.value.replace(/\D/g, "");
+			let i = 0,
+				newValue = template.replace(/[_\d]/g, function (a) {
+					return i < val.length ? val.charAt(i++) || def.charAt(i) : a;
+				});
+			i = newValue.indexOf("_");
+			if (i != -1) {
+				newValue = newValue.slice(0, i);
+			}
+			let reg = template
+				.substr(0, this.value.length)
+				.replace(/_+/g, function (a) {
+					return "\\d{1," + a.length + "}";
+				})
+				.replace(/[+()]/g, "\\$&");
+			reg = new RegExp("^" + reg + "$");
+			if (!reg.test(this.value) || this.value.length < 5 || (keyCode > 47 && keyCode < 58)) {
+				this.value = newValue;
+			}
+			if (event.type == "blur" && this.value.length < 5) {
+				this.value = "";
+			}
+		}
+
+		for (const elem of elems) {
+			elem.addEventListener("input", mask);
+			elem.addEventListener("focus", mask);
+			elem.addEventListener("blur", mask);
+		}
+	}
+	maskPhone('input[type="tel"]');
 
 	// Sliders
+
+
+
+
+
+
 	if (document.querySelector('.js-main-partners-slider')) {
 		let partnersSlider = new Swiper('.js-main-partners-slider', {
 			autoHeight: true,
@@ -226,7 +313,7 @@ window.addEventListener('DOMContentLoaded', () => {
 					document.querySelector('.counter-partner__total').innerHTML = partnerLength;
 				},
 				slideChange: function (e) {
-					let number =  e.realIndex + 1;
+					let number = e.realIndex + 1;
 					if ((e.realIndex + 1) <= 9) {
 						number = `0${e.realIndex + 1}`;
 					}
@@ -516,38 +603,38 @@ window.addEventListener('DOMContentLoaded', () => {
 	// Range slider
 	if (document.querySelector('.range-slider')) {
 		const rangeInput = document.querySelectorAll(".range-input input"),
-		priceInput = document.querySelectorAll(".price-input input"),
-		range = document.querySelector(".slider .progress");
+			priceInput = document.querySelectorAll(".price-input input"),
+			range = document.querySelector(".slider .progress");
 		let priceGap = 10;
 		document.querySelector('.minmax .min').innerHTML = rangeInput[0].min;
 		document.querySelector('.minmax .max').innerHTML = rangeInput[0].max;
-		priceInput.forEach(input =>{
-			input.addEventListener("input", e =>{
+		priceInput.forEach(input => {
+			input.addEventListener("input", e => {
 				let minPrice = parseInt(priceInput[0].value),
-				maxPrice = parseInt(priceInput[1].value);
-				
-				if((maxPrice - minPrice >= priceGap) && maxPrice <= rangeInput[1].max){
-					if(e.target.className === "input-min"){
+					maxPrice = parseInt(priceInput[1].value);
+
+				if ((maxPrice - minPrice >= priceGap) && maxPrice <= rangeInput[1].max) {
+					if (e.target.className === "input-min") {
 						rangeInput[0].value = minPrice;
 						range.style.left = ((minPrice / rangeInput[0].max) * 100) + "%";
-					}else{
+					} else {
 						rangeInput[1].value = maxPrice;
 						range.style.right = 100 - (maxPrice / rangeInput[1].max) * 100 + "%";
 					}
 				}
 			});
 		});
-		rangeInput.forEach(input =>{
-			input.addEventListener("input", e =>{
+		rangeInput.forEach(input => {
+			input.addEventListener("input", e => {
 				let minVal = parseInt(rangeInput[0].value),
-				maxVal = parseInt(rangeInput[1].value);
-				if((maxVal - minVal) < priceGap){
-					if(e.target.className === "range-min"){
+					maxVal = parseInt(rangeInput[1].value);
+				if ((maxVal - minVal) < priceGap) {
+					if (e.target.className === "range-min") {
 						rangeInput[0].value = maxVal - priceGap
-					}else{
+					} else {
 						rangeInput[1].value = minVal + priceGap;
 					}
-				}else{
+				} else {
 					priceInput[0].value = minVal;
 					priceInput[1].value = maxVal;
 					range.style.left = ((minVal / rangeInput[0].max) * 100) + "%";
@@ -718,3 +805,90 @@ window.addEventListener('DOMContentLoaded', () => {
 	});
 	zoom.init();
 });
+
+
+$(function () {
+
+	if (document.querySelector('.js-new-hero-slider')) {
+		$('.js-new-hero-slider')
+		$('.js-new-hero-slider').each(function () {
+			var nhslider = $(this);
+
+			function refereshDigits(sliderThis) {
+				nhslider.find('.js-current-slide-number').html((sliderThis.realIndex + 1).toLocaleString('en-US', {
+					minimumIntegerDigits: 2,
+					useGrouping: false
+				}));
+				var slides_count = nhslider.find(".swiper-slide:not(.swiper-slide-duplicate)").length;
+
+				nhslider.find('.js-slides-count').html(slides_count.toLocaleString('en-US', {
+					minimumIntegerDigits: 2,
+					useGrouping: false
+				}));
+			}
+
+			let partnersSlider = new Swiper($(this)[0], {
+				autoHeight: true,
+				slidesPerView: 1,
+				spaceBetween: 10,
+				loop: true,
+				navigation: {
+					nextEl: nhslider.find('.swiper-button-next')[0],
+					prevEl: nhslider.find('.swiper-button-prev')[0],
+				},
+				speed: 500,
+				autoplay: {
+					delay: 3000,
+				},
+				pagination: {
+					el: nhslider.find('.swiper-pagination')[0],
+				},
+				on: {
+					slideChange: function () {
+						refereshDigits(this);
+					},
+					afterInit: function () {
+						refereshDigits(this);
+					},
+
+
+				}
+			});
+
+
+
+		});
+
+	}
+
+
+
+
+
+});
+
+
+
+window.addEventListener('DOMContentLoaded', () => {
+	let parentItems = document.querySelectorAll('.header__menu-list-item.parent');
+
+	parentItems.forEach(function (item) {
+		item.addEventListener('mouseenter', function () {
+			let dropdown = this.querySelector('.header__menu-dropdown');
+			dropdown.style.display = 'block';
+		});
+
+		item.addEventListener('mouseleave', function () {
+			let dropdown = this.querySelector('.header__menu-dropdown');
+			dropdown.style.display = 'none';
+		});
+	});
+
+	let mobileParents = document.querySelectorAll('.mobile-parent');
+	mobileParents.forEach(function (item) {
+		item.addEventListener('click', function () {
+			this.classList.toggle('opened');
+		});
+	});
+}
+);

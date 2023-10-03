@@ -42,6 +42,7 @@ gulp.task('scripts', function() {
 	// 'node_modules/photoswipe/dist/umd/photoswipe-lightbox.umd.min.js'
 	// 'node_modules/tingle.js/dist/tingle.min.js',
 	return gulp.src([
+		'app/libs/jquery-3.7.1.min.js',
 		'app/libs/swiperjs/swiper-bundle.min.js',
 		'app/libs/custom-select/itc-custom-select.js',
 		'node_modules/photoswipe/dist/umd/photoswipe.umd.min.js',
@@ -65,7 +66,7 @@ gulp.task('js', function() {
 });
 
 gulp.task('watch', function() {
-	gulp.watch('app/sass/**/*.sass', gulp.parallel('styles'));
+	gulp.watch('app/sass/**/*.s[ac]ss', gulp.parallel('styles'));
 	gulp.watch(['libs/**/*.js'], gulp.parallel('scripts'));
 	gulp.watch('app/*.html', gulp.parallel('code'));
 	gulp.watch('app/js/*.js', gulp.parallel('js'));

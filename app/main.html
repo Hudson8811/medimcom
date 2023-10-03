@@ -20,9 +20,30 @@
 	<header class="header">
 		<div class="header__top-content">
 			<div class="container header__top-content-wrapper">
-				<div class="search-form">
+				<!--<div class="search-form">
 					<input type="text" class="search-form__input" name="q" placeholder="Поиск среди 4980 товаров">
 					<button class="search-form__button"></button>
+				</div>-->
+				<div class="header__menu-list-wrap">
+					<ul class="header__menu-list">
+						<li class="header__menu-list-item header__menu-list-item--sign">
+							<a href="">Войти
+								<span class="sign-icon-new"></span></a>
+						</li>
+						<li class="header__menu-list-item parent">
+							<a href="">О компании</a>
+							<ul class="header__menu-dropdown">
+								<li><a href="">Персонал</a></li>
+								<li><a href="">Каталоги</a></li>
+								<li><a href="">Контакты</a></li>
+								<li><a href="">Вакансии</a></li>
+								<li><a href="">Партнеры</a></li>
+							</ul>
+						</li>
+						<li class="header__menu-list-item header__menu-list-item--active"><a href="">Новости</a></li>
+						<li class="header__menu-list-item"><a href="">Информационные материалы</a></li>
+						<li class="header__menu-list-item"><a href="">Контакты</a></li>
+					</ul>
 				</div>
 				<div class="special-abilities">
 					<div class="special-abilities__item">
@@ -87,6 +108,18 @@
 				</div>
 			</div>
 		</div>
+		<div class="header__bottom-part">
+			<div class="container header__bottom-part-container">
+				<a href="" class="header-catalog-btn js-desktop-catalog-opener">
+					<img src="img/svg/catalog_icon.svg" alt="">
+					<div class="header-catalog-btn__text">Каталог</div>
+				</a>
+				<div class="search-form">
+					<input type="text" class="search-form__input" name="q" placeholder="Поиск среди 4980 товаров">
+					<button class="search-form__button"></button>
+				</div>
+			</div>
+		</div>
 		<div class="header__search-form-mobile">
 			<div class="container">
 				<div class="search-form">
@@ -95,20 +128,21 @@
 				</div>
 			</div>
 		</div>
+		<!--
 		<nav class="header__menu">
 			<div class="container">
 				<ul class="header__menu-list">
-					<li class="header__menu-list-item">
-                        <a href="">О компании</a>
-                        <ul class="header__menu-dropdown">
-                            <li><a href="">Новости</a></li>
-                            <li><a href="">Персонал</a></li>
-                            <li><a href="">Каталоги</a></li>
-                            <li><a href="">Контакты</a></li>
-                            <li><a href="">Вакансии</a></li>
-                            <li><a href="">Партнеры</a></li>
-                        </ul>
-                    </li>
+					<li class="header__menu-list-item parent">
+						<a href="">О компании</a>
+						<ul class="header__menu-dropdown">
+							<li><a href="">Новости</a></li>
+							<li><a href="">Персонал</a></li>
+							<li><a href="">Каталоги</a></li>
+							<li><a href="">Контакты</a></li>
+							<li><a href="">Вакансии</a></li>
+							<li><a href="">Партнеры</a></li>
+						</ul>
+					</li>
 					<li class="header__menu-list-item"><a href="">Оборудование</a></li>
 					<li class="header__menu-list-item"><a href="">Анестезиология и реанимация</a></li>
 					<li class="header__menu-list-item"><a href="">Лабораторная диагностика</a></li>
@@ -121,6 +155,7 @@
 				</ul>
 			</div>
 		</nav>
+		-->
 		<div class="header__mobile-menu">
 			<div class="special-abilities">
 				<div class="special-abilities__item">
@@ -132,17 +167,22 @@
 			</div>
 			<nav>
 				<ul>
+					
+					<li class="mob-menu-catalog-btn js-mob-menu-catalog-btn">
+						<a href="#" class="mob-menu-catalog-btn__link js-mob-menu-catalog-btn__link">Каталог</a>
+					</li>			
+					
 					<li class="mobile-parent">
-                        <a href="#">О компании</a>
-                        <ul class="mobile-dropdown">
-                            <li><a href="">Новости</a></li>
-                            <li><a href="">Персонал</a></li>
-                            <li><a href="">Каталоги</a></li>
-                            <li><a href="">Контакты</a></li>
-                            <li><a href="">Вакансии</a></li>
-                            <li><a href="">Партнеры</a></li>
-                        </ul>
-                    </li>
+						<a href="#">О компании</a>
+						<ul class="mobile-dropdown">
+							<li><a href="">Новости</a></li>
+							<li><a href="">Персонал</a></li>
+							<li><a href="">Каталоги</a></li>
+							<li><a href="">Контакты</a></li>
+							<li><a href="">Вакансии</a></li>
+							<li><a href="">Партнеры</a></li>
+						</ul>
+					</li>
 					<li><a href="#">Оборудование</a></li>
 					<li><a href="#">Анестезиология и реанимация</a></li>
 					<li><a href="#">Лабораторная диагностика</a></li>
@@ -180,7 +220,259 @@
 			</div>
 		</div>
 	</header>
+	<div class="catalog-menu-wrap js-catalog-menu-wrap">
+		<div class="container">
+			<div class="cat-menu-toggle--catalog cat-menu-toggle js-close-catalog-mob cat-menu-toggle--opened">
+				<div class="cat-menu-toggle__line"></div>
+				<div class="cat-menu-toggle__line"></div>
+				<div class="cat-menu-toggle__line"></div>
+			</div>
+			<div class="catalog-menu">
+				
+				<div class="catalog-menu-cols">
 
+					<div class="catalog-menu-col catalog-menu-col--1">
+						<div class="catalog-menu__item-l1 catalog-menu__item-l1--has-sub">
+							<a href="" class="catalog-menu__item-l1-link">Анестезиология и реанимация</a>
+							<div class="js-catalog-menu__item-l1-sub-opener catalog-menu__item-l1-sub-opener"></div>
+							<div class="catalog-menu__item-l1-subs">
+								<a href="" class="catalog-menu__item-l2">Инфузионная терапия</a>
+								<a href="" class="catalog-menu__item-l2">Респираторная поддержка</a>
+								<a href="" class="catalog-menu__item-l2">Регионарная анестезия</a>
+								<a href="" class="catalog-menu__item-l2">Энтеральное питание</a>
+								<a href="" class="catalog-menu__item-l2">Обогрев пациента</a>
+								<a href="" class="catalog-menu__item-l2">Шприцы для взятия газов крови</a>
+								<a href="" class="catalog-menu__item-l2">Аппараты ИВЛ</a>
+								<a href="" class="catalog-menu__item-l2">Диагностика сепсиса</a>
+							</div>
+						</div>
+						<div class="catalog-menu__item-l1 catalog-menu__item-l1--has-sub">
+							<a href="" class="catalog-menu__item-l1-link">Мониторинг пациента</a>
+							<div class="js-catalog-menu__item-l1-sub-opener catalog-menu__item-l1-sub-opener"></div>
+							<div class="catalog-menu__item-l1-subs">
+								<a href="" class="catalog-menu__item-l2">Гемодиализ</a>
+								<a href="" class="catalog-menu__item-l2">Мониторинг пациента</a>
+								<a href="" class="catalog-menu__item-l2">ЭКГ-электроды для взрослых</a>
+								<a href="" class="catalog-menu__item-l2">ЭКГ-электроды для детей</a>
+								<a href="" class="catalog-menu__item-l2">BIS-мониторинг</a>
+							</div>
+						</div>
+					</div>
+					<div class="catalog-menu-col catalog-menu-col--2">
+
+						<div class="catalog-menu__item-l1 catalog-menu__item-l1--has-sub">
+							<a href="" class="catalog-menu__item-l1-link">Хирургия</a>
+							<div class="js-catalog-menu__item-l1-sub-opener catalog-menu__item-l1-sub-opener"></div>
+							<div class="catalog-menu__item-l1-subs">
+								<a href="" class="catalog-menu__item-l2">Электрохирургия</a>
+								<a href="" class="catalog-menu__item-l2">Сшивающие аппараты</a>
+								<a href="" class="catalog-menu__item-l2">Тромбоз» стракторы</a>
+								<a href="" class="catalog-menu__item-l2">Шовные материалы</a>
+								<a href="" class="catalog-menu__item-l2">Биопсия костного мозга</a>
+								<a href="" class="catalog-menu__item-l2">Аспирация и дренирование</a>
+								<a href="" class="catalog-menu__item-l2">Малоинеазивная хирургия</a>
+								<a href="" class="catalog-menu__item-l2">Скальпели и лезвия</a>
+								<a href="" class="catalog-menu__item-l2">Герниопла стика</a>
+							</div>
+						</div>
+						<div class="catalog-menu__item-l1 catalog-menu__item-l1--has-sub">
+							<a href="" class="catalog-menu__item-l1-link">Шприцы и иглы</a>
+							<div class="js-catalog-menu__item-l1-sub-opener catalog-menu__item-l1-sub-opener"></div>
+							<div class="catalog-menu__item-l1-subs">
+								<a href="" class="catalog-menu__item-l2">Шприцы инъекционные</a>
+								<a href="" class="catalog-menu__item-l2">Шприцы для инфузионных насосов</a>
+								<a href="" class="catalog-menu__item-l2">Иглы инъекционные</a>
+								<a href="" class="catalog-menu__item-l2">Иглы для спинальной анестезии</a>
+								<a href="" class="catalog-menu__item-l2">Иглы для эпидуральной анестезии</a>
+							</div>
+						</div>
+					</div>
+					<div class="catalog-menu-col catalog-menu-col--3">
+
+						<div class="catalog-menu__item-l1 catalog-menu__item-l1--has-sub">
+							<a href="" class="catalog-menu__item-l1-link">Урология</a>
+							<div class="js-catalog-menu__item-l1-sub-opener catalog-menu__item-l1-sub-opener"></div>
+							<div class="catalog-menu__item-l1-subs">
+								<a href="" class="catalog-menu__item-l2">Уретральные катетеры</a>
+								<a href="" class="catalog-menu__item-l2">Цистостомия</a>
+								<a href="" class="catalog-menu__item-l2">Мочеточниковые стенты</a>
+								<a href="" class="catalog-menu__item-l2">Мочеточниковые катетеры</a>
+								<a href="" class="catalog-menu__item-l2">Нефростомия</a>
+								<a href="" class="catalog-menu__item-l2">Экстракторы камней</a>
+								<a href="" class="catalog-menu__item-l2">Бужи и дил ататоры</a>
+								<a href="" class="catalog-menu__item-l2">Мочеприемники</a>
+							</div>
+						</div>
+						<div class="catalog-menu__item-l1 catalog-menu__item-l1--has-sub">
+							<a href="" class="catalog-menu__item-l1-link">Онкология</a>
+							<div class="js-catalog-menu__item-l1-sub-opener catalog-menu__item-l1-sub-opener"></div>
+							<div class="catalog-menu__item-l1-subs">
+								<a href="" class="catalog-menu__item-l2">Имплантируемые порт-системы</a>
+								<a href="" class="catalog-menu__item-l2">Иглы Губера</a>
+								<a href="" class="catalog-menu__item-l2">Р1СС-катетеры</a>
+								<a href="" class="catalog-menu__item-l2">Инфузионные помпы</a>
+							</div>
+						</div>
+					</div>
+					<div class="catalog-menu-col catalog-menu-col--4">
+						<div class="catalog-menu__item-l1 catalog-menu__item-l1--has-sub">
+							<a href="" class="catalog-menu__item-l1-link">Медицинское оборудование</a>
+							<div class="js-catalog-menu__item-l1-sub-opener catalog-menu__item-l1-sub-opener"></div>
+							<div class="catalog-menu__item-l1-subs">
+								<a href="" class="catalog-menu__item-l2">Церебральный оксиметр INVOS</a>
+								<a href="" class="catalog-menu__item-l2">Устройство для обогрева пациентов</a>
+								<a href="" class="catalog-menu__item-l2">Пульсоксиметр Nellcor Bedside SpO2</a>
+								<a href="" class="catalog-menu__item-l2">Монитор дыхательных функций</a>
+								<a href="" class="catalog-menu__item-l2">Аппарат реанимации новорожденных</a>
+								<a href="" class="catalog-menu__item-l2">Ультразвуковая система Site Rite 8</a>
+								<a href="" class="catalog-menu__item-l2">Аппараты ИВЛ</a>
+								<a href="" class="catalog-menu__item-l2">Монитор глубины наркоза BIS VISTA</a>
+								<a href="" class="catalog-menu__item-l2">Гемокультиватор BD ВАСТЕС</a>
+								<a href="" class="catalog-menu__item-l2">Идентификация микроорганизмов</a>
+								<a href="" class="catalog-menu__item-l2">Увлажнитель с генератором потока</a>
+							</div>
+						</div>
+						<div class="catalog-menu__item-l1 catalog-menu__item-l1--has-sub">
+							<a href="" class="catalog-menu__item-l1-link">Лабораторная диагностика</a>
+							<div class="js-catalog-menu__item-l1-sub-opener catalog-menu__item-l1-sub-opener"></div>
+							<div class="catalog-menu__item-l1-subs">
+								<a href="" class="catalog-menu__item-l2">Взятие венозной крови</a>
+								<a href="" class="catalog-menu__item-l2">Вакуумные пробирки для взятия мочи</a>
+								<a href="" class="catalog-menu__item-l2">Взятие капиллярной крови</a>
+								<a href="" class="catalog-menu__item-l2">Микробиология</a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="new-hero">
+
+		<div class="swiper new-hero-slider js-new-hero-slider">
+			<div class="swiper-wrapper">
+				<!-- Slides -->
+				<div class="swiper-slide new-hero-slide">
+					<div class="container ">
+						<div class="new-hero-slide__inner">
+							<div class="new-hero-slide__left">
+								<div class="new-hero-slide__title">
+									Аппарат УЗД<br> <b>CANON Aplio А450</b>
+								</div>
+								<div class="new-hero-slide__desc">
+									Набор расширенных функций визуализации и количественного определения Aplio a-series предоставляет метрики, которые помогут быстро и уверенно поставить диагноз
+								</div>
+								<div class="new-hero-slide__btn-wrap">
+									<a href="#" class="button button--orange button--arrow button--larger-text">подробнее</a>
+								</div>
+							</div>
+							<div class="new-hero-slide__right">
+								<div class="new-hero-slide__img">
+									<img src="img/top-slider-1.png" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="swiper-slide new-hero-slide">
+					<div class="container ">
+						<div class="new-hero-slide__inner">
+							<div class="new-hero-slide__left">
+								<div class="new-hero-slide__title">
+									Аппарат УЗД<br> <b>CANON Aplio А450</b>
+								</div>
+								<div class="new-hero-slide__desc">
+									Набор расширенных функций визуализации и количественного определения Aplio a-series предоставляет метрики, которые помогут быстро и уверенно поставить диагноз
+								</div>
+								<div class="new-hero-slide__btn-wrap">
+									<a href="#" class="button button--orange button--arrow button--larger-text">подробнее</a>
+								</div>
+							</div>
+							<div class="new-hero-slide__right">
+								<div class="new-hero-slide__img">
+									<img src="img/top-slider-1.png" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="swiper-slide new-hero-slide">
+					<div class="container ">
+						<div class="new-hero-slide__inner">
+
+							<div class="new-hero-slide__left">
+								<div class="new-hero-slide__title">
+									2 Аппарат УЗД <b>CANON Aplio А450</b>
+								</div>
+								<div class="new-hero-slide__desc">
+									Набор расширенных функций визуализации и количественного определения Aplio a-series предоставляет метрики, которые помогут быстро и уверенно поставить диагноз
+								</div>
+								<div class="new-hero-slide__btn-wrap">
+									<a href="#" class="button button--orange button--arrow button--larger-text">подробнее</a>
+								</div>
+							</div>
+							<div class="new-hero-slide__right">
+								<div class="new-hero-slide__img">
+									<img src="img/top-slider-1.png" alt="">
+								</div>
+							</div>
+
+
+
+						</div>
+					</div>
+				</div>
+
+				<div class="swiper-slide new-hero-slide">
+					<div class="container ">
+						<div class="new-hero-slide__inner">
+
+							<div class="new-hero-slide__left">
+								<div class="new-hero-slide__title">
+									3 Аппарат УЗД <b>CANON Aplio А450</b>
+								</div>
+								<div class="new-hero-slide__desc">
+									Набор расширенных функций визуализации и количественного определения Aplio a-series предоставляет метрики, которые помогут быстро и уверенно поставить диагноз
+								</div>
+								<div class="new-hero-slide__btn-wrap">
+									<a href="#" class="button button--orange button--arrow button--larger-text">подробнее</a>
+								</div>
+							</div>
+							<div class="new-hero-slide__right">
+								<div class="new-hero-slide__img">
+									<img src="img/top-slider-1.png" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="nhs-controls-wrap">
+				<div class="container">
+					<div class="nhs-controls">
+						<div class="nhs-controls-numbers">
+							<div class="nhs-controls-numbers__current js-current-slide-number">00</div>
+							<div class="nhs-controls-numbers__count js-slides-count">00</div>
+						</div>
+						<div class="swiper-pagination nhs-controls__pagination"></div>
+						<div class="swiper-button-prev nhs-controls__arrow nhs-controls__arrow--prev">
+							<svg xmlns="http://www.w3.org/2000/svg" width="13" height="22" viewBox="0 0 13 22" fill="none"><path d="M11.6143 20.9705L1.71476 11.071L11.6143 1.17147" stroke="#C0C6C9" stroke-width="1.5"/></svg>
+						</div>
+						<div class="swiper-button-next nhs-controls__arrow nhs-controls__arrow--next">
+							<svg xmlns="http://www.w3.org/2000/svg" width="12" height="22" viewBox="0 0 12 22" fill="none"><path d="M0.899414 20.9705L10.7989 11.071L0.899416 1.17147" stroke="#C0C6C9" stroke-width="1.5"/></svg>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--
 	<section class="main-section">
 		<div class="container main-section-wrapper">
 			<div class="main-section__content">
@@ -201,7 +493,7 @@
 			</div>
 		</div>
 	</section>
-
+-->
 	<section class="main-about section">
 		<div class="container">
 			<div class="section-title section-title--center main-about__section-title">
@@ -291,7 +583,7 @@
 			<div class="simple-banner-text">Приглашаем к сотрудничеству партнеров - поставщиков</div>
 			<div class="simple-banner-btns">
 				<div class="simple-banner-btn button button--orange">как стать партнером</div>
-			</div>				
+			</div>
 		</div>
 	</div>
 	<section class="catalog-sections section">
@@ -508,16 +800,16 @@
 	</section>
 
 
-	<section class="section section-preeminence"  style="background-image:url('/img/preeminence-sec-bg.jpg');">
+	<section class="section section-preeminence" style="background-image:url('/img/preeminence-sec-bg.jpg');">
 		<div class="section-title section-title--center">
 			<h2>Наши преимущества</h2>
 		</div>
 		<div class="container">
-			<div class="preeminence" >
+			<div class="preeminence">
 				<div class="preeminence-item">
 					<div class="preeminence-item__inner">
 						<div class="preeminence-item__image">
-								<img src="/img/preem-icons/1.svg" alt="">
+							<img src="/img/preem-icons/1.svg" alt="">
 						</div>
 						<div class="preeminence-item__text">Quisque tristique, quam eget placerat hendrerit, sapien lacus placerat sem, gravida</div>
 					</div>
@@ -525,7 +817,7 @@
 				<div class="preeminence-item">
 					<div class="preeminence-item__inner">
 						<div class="preeminence-item__image">
-								<img src="/img/preem-icons/2.svg" alt="">
+							<img src="/img/preem-icons/2.svg" alt="">
 						</div>
 						<div class="preeminence-item__text">Quisque tristique, quam eget placerat hendrerit, sapien lacus placerat sem, gravida</div>
 					</div>
@@ -533,7 +825,7 @@
 				<div class="preeminence-item">
 					<div class="preeminence-item__inner">
 						<div class="preeminence-item__image">
-								<img src="/img/preem-icons/3.svg" alt="">
+							<img src="/img/preem-icons/3.svg" alt="">
 						</div>
 						<div class="preeminence-item__text">Quisque tristique, quam eget placerat hendrerit, sapien lacus placerat sem, gravida</div>
 					</div>
@@ -541,7 +833,7 @@
 				<div class="preeminence-item">
 					<div class="preeminence-item__inner">
 						<div class="preeminence-item__image">
-								<img src="/img/preem-icons/4.svg" alt="">
+							<img src="/img/preem-icons/4.svg" alt="">
 						</div>
 						<div class="preeminence-item__text">Quisque tristique, quam eget placerat hendrerit, sapien lacus placerat sem, gravida</div>
 					</div>
@@ -549,7 +841,7 @@
 				<div class="preeminence-item">
 					<div class="preeminence-item__inner">
 						<div class="preeminence-item__image">
-								<img src="/img/preem-icons/5.svg" alt="">
+							<img src="/img/preem-icons/5.svg" alt="">
 						</div>
 						<div class="preeminence-item__text">Quisque tristique, quam eget placerat hendrerit, sapien lacus placerat sem, gravida</div>
 					</div>
@@ -557,7 +849,7 @@
 				<div class="preeminence-item">
 					<div class="preeminence-item__inner">
 						<div class="preeminence-item__image">
-								<img src="/img/preem-icons/6.svg" alt="">
+							<img src="/img/preem-icons/6.svg" alt="">
 						</div>
 						<div class="preeminence-item__text">Quisque tristique, quam eget placerat hendrerit, sapien lacus placerat sem, gravida</div>
 					</div>
@@ -775,4 +1067,5 @@
 	<script src="js/index.js"></script>
 
 </body>
+
 </html>

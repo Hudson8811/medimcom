@@ -1,4 +1,4 @@
-.menu-toggle
+.menu-toggle,.cat-menu-toggle
     display: none
     position: absolute
     top: 21px
@@ -23,7 +23,7 @@
         left: 335px
         top: 15px
         z-index: 1001
-        .menu-toggle__line
+        .menu-toggle__line,.cat-menu-toggle__line
             background: #fff
             &:nth-child(1)
                 display: none
@@ -33,6 +33,8 @@
             &:nth-child(3)
                 transform: rotate(-45deg)
                 margin-top: -3px
+        .cat-menu-toggle__line
+            background: $black
     @include media('<md')
         display: block
     @include media('<370px')
